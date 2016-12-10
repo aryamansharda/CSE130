@@ -2,12 +2,12 @@
 # Created by Aryaman Sharda, Timothy Pei, Kirill Sydykov 
 
 printf "Welcome to CSE 130! \nWould you like to (r)etrieve code files or (s)ubmit a PA?\n"
-read response 
 
 if [ "$response" == "r" ]; then
 	printf "Creating CSE 130 folder...\n"
 	printf "Initializing git repository...\n"
 	mkdir "CSE 130"
+	
 	git init
 	git add *
 	git commit -m "Initial commit."
@@ -61,5 +61,9 @@ if [ "$response" == "r" ]; then
 	printf "Downloading PA7 starter code...\n"
 	curl "https://cseweb.ucsd.edu/classes/fa16/cse130-a/pa7/misc.pl" --silent --output "./CSE 130/PA7/misc.pl"	
 
-	printf "All starter code has been retrieved"
+	printf "All starter code has been retrieved\n\n"
+fi 
+
+if [ "$response" == "s" ]; then
+	printf "Which assignment would you like to submit? \n"	
 fi 
