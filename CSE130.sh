@@ -1,7 +1,7 @@
 # CSE 130 Helper
 # Created by Aryaman Sharda, Timothy Pei, Kirill Sydykov 
 
-printf "Welcome to CSE 130! \n Would you like to (r)etrieve code files or (s)ubmit a PA?"
+printf "Welcome to CSE 130! \nWould you like to (r)etrieve code files or (s)ubmit a PA?\n"
 read response 
 
 if [ "$response" == "r" ]; then
