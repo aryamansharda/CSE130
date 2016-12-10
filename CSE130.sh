@@ -11,8 +11,8 @@ if [ "$response" == "r" ]; then
 	git commit -m "Initial commit."
 
 	mkdir "./CSE 130/PA1"
-	curl "https://cseweb.ucsd.edu/classes/fa16/cse130-a/pa1/misc.ml" -O "./CSE 130/PA1"
-	curl "https://cseweb.ucsd.edu/classes/fa16/cse130-a/pa1/test.ml" -O "./CSE 130/PA1"
+	curl "https://cseweb.ucsd.edu/classes/fa16/cse130-a/pa1/misc.ml" -O "./CSE 130/PA1/"
+	curl "https://cseweb.ucsd.edu/classes/fa16/cse130-a/pa1/test.ml" -O "./CSE 130/PA1/"
 
 	mkdir "./CSE 130/PA2"
 	mkdir "./CSE 130/PA3"
