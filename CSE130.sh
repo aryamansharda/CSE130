@@ -2,6 +2,7 @@
 # Created by Aryaman Sharda, Timothy Pei, Kirill Sydykov 
 
 printf "Welcome to CSE 130! \nWould you like to (r)etrieve code files or (s)ubmit a PA?\n"
+read response 
 
 if [ "$response" == "r" ]; then
 	printf "Creating CSE 130 folder...\n"
@@ -65,5 +66,108 @@ if [ "$response" == "r" ]; then
 fi 
 
 if [ "$response" == "s" ]; then
-	printf "Which assignment would you like to submit? \n"	
+	printf "Which assignment would you like to submit? \nEnter a number from 1 - 7. \n"
+	read fileNumber 
+
+	printf "Please enter your first name: "
+	read firstName
+
+	printf "Please enter your last name: "
+	read lastName 
+
+	prep cs130f
+	case "$fileNumber" in
+	        "1")
+	            printf "Submitting PA1...\n"
+	            mkdir "./CSE 130/PA1/solution"
+	            cp "./CSE 130/PA1/misc.ml" "./CSE 130/PA1/solution"
+	            
+	            cd "./CSE 130/PA1/solution"
+	            zip "$lastName""_""$firstName""_cse130_pa1.zip" ./*	            
+
+	            turnin_pa1 "$lastName"+"_"+"$firstName"+"_cse130_pa1.zip"
+	            ;;
+	        "2")
+	            printf "Submitting PA2...\n"
+	            mkdir "./CSE 130/PA2/solution"
+	            cp "./CSE 130/PA2/misc.ml" "./CSE 130/PA2/solution/"
+				cp "./CSE 130/PA2/expr.ml" "./CSE 130/PA2/solution/"
+				cp "./CSE 130/PA2/art.ml" "./CSE 130/PA2/solution/"
+				cp "./CSE 130/PA2/art_g_sample.jpg" "./CSE 130/PA2/solution/"
+				cp "./CSE 130/PA2/gray1.jpg" "./CSE 130/PA2/solution/"
+				cp "./CSE 130/PA2/gray2.jpg" "./CSE 130/PA2/solution/"
+				cp "./CSE 130/PA2/gray3.jpg" "./CSE 130/PA2/solution/"
+				cp "./CSE 130/PA2/color1.jpg" "./CSE 130/PA2/solution/"
+				cp "./CSE 130/PA2/color2.jpg" "./CSE 130/PA2/solution/"
+				cp "./CSE 130/PA2/color3.jpg" "./CSE 130/PA2/solution/"
+	             
+	            cd "./CSE 130/PA2/solution/"
+	            zip "$lastName""_""$firstName""_cse130_pa2.zip" ./*	            
+
+	            turnin_pa2 "$lastName"+"_"+"$firstName"+"_cse130_pa2.zip"
+	            ;;
+	        "3")
+	            printf "Submitting PA3...\n"
+	            mkdir "./CSE 130/PA3/solution"
+	            cp "./CSE 130/PA3/misc.ml" "./CSE 130/PA3/solution/"
+	            
+	            cd "./CSE 130/PA3/solution/"
+	            zip "$lastName""_""$firstName""_cse130_pa3.zip" ./*	            
+
+	            turnin_pa3 "$lastName"+"_"+"$firstName"+"_cse130_pa3.zip"
+	            ;;	
+	        "4")
+	            printf "Submitting PA4...\n"
+	            mkdir "./CSE 130/PA4/solution"
+	            cp "./CSE 130/PA4/config.make" "./CSE 130/PA4/solution/"
+	            cp "./CSE 130/PA4/main.ml" "./CSE 130/PA4/solution/"
+	            cp "./CSE 130/PA4/Makefile" "./CSE 130/PA4/solution/"
+	            cp "./CSE 130/PA4/nanoLex.mll" "./CSE 130/PA4/solution/"
+	            cp "./CSE 130/PA4/nano.ml" "./CSE 130/PA4/solution/"
+	            cp "./CSE 130/PA4/nanoParse.mly" "./CSE 130/PA4/solution/"
+	            cp "./CSE 130/PA4/rules.make" "./CSE 130/PA4/solution/"
+	            cp "./CSE 130/PA4/test.ml" "./CSE 130/PA4/solution/"
+	            cp "./CSE 130/PA4/toplevel.ml" "./CSE 130/PA4/solution/"
+
+	            cd "./CSE 130/PA4/solution/"
+	            zip "$lastName""_""$firstName""_cse130_pa4.zip" ./*	            
+	            
+	            turnin_pa4 "$lastName"+"_"+"$firstName"+"_cse130_pa4.zip"
+	            ;;	
+	        "5")
+	            printf "Submitting PA5...\n"
+	            mkdir "./CSE 130/PA5/solution"
+	            cp "./CSE 130/PA5/misc.py" "./CSE 130/PA5/solution/"
+	            cp "./CSE 130/PA5/crack.py" "./CSE 130/PA5/solution/"
+
+	            cd "./CSE 130/PA5/solution/"
+	            zip "$lastName""_""$firstName""_cse130_pa5.zip" ./*	            
+	            
+	            turnin_pa5 "$lastName"+"_"+"$firstName"+"_cse130_pa5.zip"
+	            ;;	
+	        "6")
+	            printf "Submitting PA6...\n"
+	            mkdir "./CSE 130/PA6/solution"
+
+	            cp "./CSE 130/PA6/misc.py" "./CSE 130/PA6/solution/"
+	            cp "./CSE 130/PA6/vector.py" "./CSE 130/PA6/solution/"
+	            cp "./CSE 130/PA6/decorators.py" "./CSE 130/PA6/solution/"
+
+	            cd "./CSE 130/PA6/solution/"
+	            zip "$lastName""_""$firstName""_cse130_pa6.zip" ./*	            
+	            
+	            turnin_pa6 "$lastName"+"_"+"$firstName"+"_cse130_pa6.zip"
+	            ;;
+	        "7")
+	            printf "Submitting PA7...\n"
+	            mkdir "./CSE 130/PA7/solution"
+
+	            cp "./CSE 130/PA7/misc.pl" "./CSE 130/PA7/solution/" 
+
+	            cd "./CSE 130/PA7/solution/"
+	            zip "$lastName""_""$firstName""_cse130_pa7.zip" ./*	            
+	            
+	            turnin_pa7 "$lastName"+"_"+"$firstName"+"_cse130_pa7.zip"
+	            ;;
+	esac	
 fi 
