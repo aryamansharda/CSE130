@@ -5,5 +5,6 @@ This program helps automate some of the more manual aspects of the UCSD CSE 130 
 How To Run:
 
 chmod u+x CSE130.sh
-\n
+
+
 ./CSE130.sh
